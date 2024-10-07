@@ -9,13 +9,13 @@ interface Todo {
   completed: boolean;
 }
 
-const fetchUserData = async (): Promise<Todo> => {
+const fetchTodoData = async (): Promise<Todo> => {
   const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
   return data;
 }
 
 function App() {
-  const {data, error, isLoading} = useQuery<Todo>('todo', fetchUserData, {
+  const {data, error, isLoading} = useQuery<Todo>('todo', fetchTodoData, {
     onError: (err: unknown) => {
       console.log(err);
     }
