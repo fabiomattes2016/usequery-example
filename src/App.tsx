@@ -19,7 +19,7 @@ function App() {
     onError: (err: unknown) => {
       console.log(err);
     }
-  })
+  });
 
   if(isLoading) {
     return <p>Carregando...</p>
